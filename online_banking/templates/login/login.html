@@ -1,0 +1,24 @@
+{% extends 'layouts/base.html' %}
+
+{% block 'title' %} Login {% endblock %}
+
+{% block 'content' %}
+
+
+
+<form action="{% url 'login' %}" method="POST">
+  {% csrf_token %}
+  <div class='container text-center'>
+  <h1>Sing in</h1>
+    <div class = 'mb-3'>
+    </div>
+  <table>
+    {{form.as_p}}
+  </table>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </div>
+
+</form>
+
+
+{% endblock %}

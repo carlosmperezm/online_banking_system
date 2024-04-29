@@ -1,0 +1,27 @@
+{% extends 'layouts/base.html' %}
+
+{% block 'title' %} Deposit {% endblock %}
+
+{% block 'content' %}
+
+<h4> How much do you want to deposit :</h4>
+
+<form method='POST' action='{% url 'deposit' %}' >
+  {% csrf_token %}
+  
+<div class="row g-3 align-items-center">
+  
+  <div class="input-group col-sm ">
+    <span class="input-group-text">$</span>
+    <input type="number" class="form-control" aria-label="Amount" name='amount'>
+    <span class="input-group-text">.00</span>
+  </div>
+
+  <div class="col">
+    <button type="submit" class="btn btn-success">Deposit</button>
+  </div>
+
+</div>
+</form>
+
+{% endblock %}

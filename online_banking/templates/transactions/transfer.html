@@ -1,0 +1,35 @@
+{% extends 'layouts/base.html' %}
+
+{% block 'title' %} Trasnfer {% endblock %}
+
+{% block 'content' %}
+
+<h1>Transfer Page</h1>
+
+<form method='POST' action="{% url 'transfer' %}">
+  {% csrf_token %}
+  
+  <div class="container">
+    <div class="col-sm">
+      <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <input type="number" class="form-control" aria-label="Amount" name="amount">
+        <span class="input-group-text">.00</span>
+      </div>
+    </div>
+
+    <div class="col-sm">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon2">To: @</span>
+        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2" name="recipient_username">
+      </div>
+    </div>
+    <div class="col">
+      <button type="submit" class="btn btn-success">Send</button>
+    </div>
+  </div>
+
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'layouts/base.html' %}
+
+{% block 'title' %} Withdraw {% endblock %}
+
+{% block 'content' %}
+
+
+<form method='POST' action='{% url 'withdraw' %}' >
+  {% csrf_token %}
+  
+<div class="container align-items-center">
+
+    <h4> How much do you want to withdraw :</h4>
+  <div class="row justify-content-md-center ">
+    <div class="input-group col-sm ">
+      <span class="input-group-text">$</span>
+      <input type="number" class="form-control" aria-label="Amount" name='amount'>
+      <span class="input-group-text">.00</span>
+    </div>
+    <div class="col">
+      <button type="submit" class="btn btn-success">Withdraw</button>
+    </div>
+  </div>
+
+</div>
+</form>
+
+{% endblock %}
